@@ -1,0 +1,26 @@
+project:
+	name: seamos-emprendedores
+	stack:
+		- react
+		- nextjs
+		- typescript
+		- tailwindcss
+
+packageManager: npm
+
+install:
+	# Opcion recomendada: crear el proyecto desde cero con todo configurado
+	createProject:
+		command: "npx create-next-app@latest . --ts --tailwind --eslint --app --src-dir --import-alias '@/*'"
+
+	# Opcion para cuando el proyecto ya existe y solo falta instalar dependencias
+	existingProject:
+		commands:
+			- "npm install"
+			- "npm install -D tailwindcss postcss autoprefixer"
+			- "npx tailwindcss init -p"
+
+run:
+	dev: "npm run dev"
+	build: "npm run build"
+	start: "npm run start"
